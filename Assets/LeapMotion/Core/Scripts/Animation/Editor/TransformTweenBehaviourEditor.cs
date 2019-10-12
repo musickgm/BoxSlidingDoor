@@ -43,9 +43,11 @@ namespace Leap.Unity.Animation {
 
       EditorGUI.BeginDisabledGroup(target.targetTransform == null
                                   || target.startTransform == null
+#pragma warning disable CS0618 // Type or member is obsolete
                                   || PrefabUtility.GetPrefabType(target.gameObject) == PrefabType.Prefab);
-      
-      EditorGUILayout.BeginHorizontal();
+#pragma warning restore CS0618 // Type or member is obsolete
+
+            EditorGUILayout.BeginHorizontal();
 
       if (GUILayout.Button(new GUIContent("Set Target" + (targets.Length > 1 ? "s" : "") + " To Start",
                                           "If this TransformTweenBehaviour has a valid target and start transform, "
@@ -62,9 +64,11 @@ namespace Leap.Unity.Animation {
 
       EditorGUI.BeginDisabledGroup(target.targetTransform == null
                                   || target.endTransform == null
+#pragma warning disable CS0618 // Type or member is obsolete
                                   || PrefabUtility.GetPrefabType(target.gameObject) == PrefabType.Prefab);
+#pragma warning restore CS0618 // Type or member is obsolete
 
-      if (GUILayout.Button(new GUIContent("Set Target" + (targets.Length > 1 ? "s" : "") + " To End",
+            if (GUILayout.Button(new GUIContent("Set Target" + (targets.Length > 1 ? "s" : "") + " To End",
                                           "If this TransformTweenBehaviour has a valid target and end transform, "
                                         + "you can press this button to set the target transform to the end state."))) {
         Undo.IncrementCurrentGroup();

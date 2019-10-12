@@ -33,7 +33,11 @@ namespace Leap.Unity {
     }
 
     public static bool IsPrefab(Component component) {
+#pragma warning disable CS0618 // Type or member is obsolete
+#pragma warning disable CS0618 // Type or member is obsolete
       return PrefabUtility.GetPrefabType(component.gameObject) == PrefabType.Prefab;
+#pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning restore CS0618 // Type or member is obsolete
     }
 
     /// <summary>

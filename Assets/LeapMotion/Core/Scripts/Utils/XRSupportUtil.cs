@@ -60,7 +60,9 @@ namespace Leap.Unity {
 
     public static Vector3 GetXRNodeCenterEyeLocalPosition() {
       #if UNITY_2017_2_OR_NEWER
+#pragma warning disable CS0618 // Type or member is obsolete
       return InputTracking.GetLocalPosition(XRNode.CenterEye);
+#pragma warning restore CS0618 // Type or member is obsolete
       #else
       return InputTracking.GetLocalPosition(VRNode.CenterEye);
       #endif
@@ -68,7 +70,9 @@ namespace Leap.Unity {
 
     public static Quaternion GetXRNodeCenterEyeLocalRotation() {
       #if UNITY_2017_2_OR_NEWER
+#pragma warning disable CS0618 // Type or member is obsolete
       return InputTracking.GetLocalRotation(XRNode.CenterEye);
+#pragma warning restore CS0618 // Type or member is obsolete
       #else
       return InputTracking.GetLocalRotation(VRNode.CenterEye);
       #endif
@@ -76,7 +80,9 @@ namespace Leap.Unity {
 
     public static Vector3 GetXRNodeHeadLocalPosition() {
       #if UNITY_2017_2_OR_NEWER
+#pragma warning disable CS0618 // Type or member is obsolete
       return InputTracking.GetLocalPosition(XRNode.Head);
+#pragma warning restore CS0618 // Type or member is obsolete
       #else
       return InputTracking.GetLocalPosition(VRNode.Head);
       #endif
@@ -84,7 +90,9 @@ namespace Leap.Unity {
 
     public static Quaternion GetXRNodeHeadLocalRotation() {
       #if UNITY_2017_2_OR_NEWER
+#pragma warning disable CS0618 // Type or member is obsolete
       return InputTracking.GetLocalRotation(XRNode.Head);
+#pragma warning restore CS0618 // Type or member is obsolete
       #else
       return InputTracking.GetLocalRotation(VRNode.Head);
       #endif

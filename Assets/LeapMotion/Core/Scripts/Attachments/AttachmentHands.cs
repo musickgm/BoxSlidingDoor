@@ -102,8 +102,16 @@ namespace Leap.Unity.Attachments {
 
     void Update() {
       #if UNITY_EDITOR
+#pragma warning disable CS0618 // Type or member is obsolete
+#pragma warning disable CS0618 // Type or member is obsolete
       PrefabType prefabType = PrefabUtility.GetPrefabType(this.gameObject);
+#pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning disable CS0618 // Type or member is obsolete
+#pragma warning disable CS0618 // Type or member is obsolete
       if (prefabType == PrefabType.Prefab || prefabType == PrefabType.ModelPrefab) {
+#pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning restore CS0618 // Type or member is obsolete
         return;
       }
       #endif
@@ -236,8 +244,16 @@ namespace Leap.Unity.Attachments {
 
 #if UNITY_EDITOR
     private bool getIsPrefab() {
+#pragma warning disable CS0618 // Type or member is obsolete
+#pragma warning disable CS0618 // Type or member is obsolete
       PrefabType prefabType = PrefabUtility.GetPrefabType(this.gameObject);
+#pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning disable CS0618 // Type or member is obsolete
+#pragma warning disable CS0618 // Type or member is obsolete
       return (prefabType == PrefabType.Prefab || prefabType == PrefabType.ModelPrefab);
+#pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning restore CS0618 // Type or member is obsolete
     }
 #endif
 

@@ -486,11 +486,23 @@ namespace Leap.Unity {
     }
 
     private bool shouldBeSpawned(UnityEngine.Object model) {
+#pragma warning disable CS0618 // Type or member is obsolete
       var prefabType = PrefabUtility.GetPrefabType(model);
+#pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning disable CS0618 // Type or member is obsolete
+#pragma warning disable CS0618 // Type or member is obsolete
       if (PrefabUtility.GetPrefabType(this) != PrefabType.Prefab) {
+#pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning disable CS0618 // Type or member is obsolete
         return prefabType == PrefabType.Prefab;
+#pragma warning restore CS0618 // Type or member is obsolete
       } else {
+#pragma warning disable CS0618 // Type or member is obsolete
+#pragma warning disable CS0618 // Type or member is obsolete
         return PrefabUtility.GetPrefabObject(model) != PrefabUtility.GetPrefabObject(this);
+#pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning restore CS0618 // Type or member is obsolete
       }
     }
 

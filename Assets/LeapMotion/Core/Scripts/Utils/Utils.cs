@@ -632,9 +632,15 @@ namespace Leap.Unity {
         .Where(o => {
 #if UNITY_EDITOR
           // Exclude prefabs.
+#pragma warning disable CS0618 // Type or member is obsolete
           var prefabType = UnityEditor.PrefabUtility.GetPrefabType(o);
+#pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning disable CS0618 // Type or member is obsolete
           if (prefabType == UnityEditor.PrefabType.ModelPrefab
+#pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning disable CS0618 // Type or member is obsolete
           || prefabType == UnityEditor.PrefabType.Prefab) {
+#pragma warning restore CS0618 // Type or member is obsolete
             return false;
           }
 #endif
@@ -1347,8 +1353,12 @@ namespace Leap.Unity {
       TextureFormat.EAC_R_SIGNED,
       TextureFormat.EAC_RG,
       TextureFormat.EAC_RG_SIGNED,
+#pragma warning disable CS0618 // Type or member is obsolete
       TextureFormat.ETC_RGB4_3DS,
+#pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning disable CS0618 // Type or member is obsolete
       TextureFormat.ETC_RGBA8_3DS
+#pragma warning restore CS0618 // Type or member is obsolete
     };
 
     /// <summary>
