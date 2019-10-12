@@ -50,7 +50,15 @@ public class TrialManager : Singleton<TrialManager>
     private void DoorClosedChecks(float timeBetween)
     {
         //Check to see if the hand is still in the box.
+        /*if (true)
+        {
+            BoxEventSystem.Instance.RaiseTrialEnd(currentCondition, true);
+        }
         //Check to see if the ball is still in the box. 
+        if (false)
+        {
+            BoxEventSystem.Instance.RaiseTrialEnd(currentCondition, true);
+        }*/
         Run.After(timeBetween, DoorSlider.Instance.StartCycle);
     }
 }

@@ -6,7 +6,7 @@ using System.IO;
 
 public static class SaveLoadManager
 {
-    private const string _baseFolderName = "VRFEData";
+    private const string _baseFolderName = "BoxSlidingDoorData";
 
 
     /// <summary>

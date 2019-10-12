@@ -12,7 +12,7 @@ public class BoxEventSystem : Singleton<BoxEventSystem>
     public static event DoorClosed OnDoorClosed;
     public delegate void TrialStart();
     public static event TrialStart OnTrialStart;
-    public delegate void TrialEnd();
+    public delegate void TrialEnd(Condition currentCondition, bool success);
     public static event TrialEnd OnTrialEnd;
     public delegate void SetStart();
     public static event SetStart OnSetStart;
@@ -32,9 +32,9 @@ public class BoxEventSystem : Singleton<BoxEventSystem>
         OnTrialStart?.Invoke();
     }
 
-    public void RaiseTrialEnd()
+    public void RaiseTrialEnd(Condition currentCondition, bool success)
     {
-        OnTrialEnd?.Invoke();
+        OnTrialEnd?.Invoke(currentCondition, success);
     }
 
     public void RaiseSetStart()
