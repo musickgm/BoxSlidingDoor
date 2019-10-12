@@ -42,23 +42,23 @@ public class DataManager : Singleton<DataManager>
         StartCoroutine(_RecordPosition);
     }
 
-    private void OnEnable()
+    /*private void OnEnable()
     {
         BoxEventSystem.OnRockEnd += SavePosData;
         BoxEventSystem.OnRockEnd += SaveSelectionData;
-        BoxEventSystem.OnRockSelected += RecordRockSelect;
-        BoxEventSystem.OnAcidTestStart += RecordAcidTool;
-        BoxEventSystem.OnLensTestStart += RecordLensTool;
+        BoxEventSystem.OnDoorClosed += RecordRockSelect;
+        BoxEventSystem.OnTrialStart += RecordAcidTool;
+        BoxEventSystem.OnSetStart += RecordLensTool;
     }
 
     private void OnDisable()
     {
         BoxEventSystem.OnRockEnd -= SavePosData;
         BoxEventSystem.OnRockEnd -= SaveSelectionData;
-        BoxEventSystem.OnRockSelected -= RecordRockSelect;
-        BoxEventSystem.OnAcidTestStart -= RecordAcidTool;
-        BoxEventSystem.OnLensTestStart -= RecordLensTool;
-    }
+        BoxEventSystem.OnDoorClosed -= RecordRockSelect;
+        BoxEventSystem.OnTrialStart -= RecordAcidTool;
+        BoxEventSystem.OnSetStart -= RecordLensTool;
+    }*/
 
     void SavePosData()
     {

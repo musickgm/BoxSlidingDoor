@@ -8,116 +8,47 @@ using UnityEngine;
 public class BoxEventSystem : Singleton<BoxEventSystem>
 {
     #region delegates and events
-    public delegate void RockSelected();
-    public static event RockSelected OnRockSelected;
-    public delegate void AcidTestStart();
-    public static event AcidTestStart OnAcidTestStart;
-    public delegate void AcidTestEnd();
-    public static event AcidTestEnd OnAcidTestEnd;
-    public delegate void LensTestStart();
-    public static event LensTestStart OnLensTestStart;
-    public delegate void LensTestEnd();
-    public static event LensTestEnd OnLensTestEnd;
-    public delegate void AllTestsEnd();
-    public static event AllTestsEnd OnAllTestsEnd;
-    public delegate void PostQuestionsStart();
-    public static event PostQuestionsStart OnPostQuestionsStart;
-    public delegate void PostQuestionsEnd();
-    public static event PostQuestionsEnd OnPostQuestionsEnd;
-    public delegate void RockEnd();
-    public static event RockEnd OnRockEnd;
-    public delegate void AllRocksComplete();
-    public static event AllRocksComplete OnAllRocksComplete;
-    public delegate void SpatialTestStart();
-    public static event SpatialTestStart OnSpatialTestStart;
-    public delegate void SpatialTestEnd();
-    public static event SpatialTestEnd OnSpatialTestEnd;
+    public delegate void DoorClosed(float timeBetween);
+    public static event DoorClosed OnDoorClosed;
+    public delegate void TrialStart();
+    public static event TrialStart OnTrialStart;
+    public delegate void TrialEnd();
+    public static event TrialEnd OnTrialEnd;
+    public delegate void SetStart();
+    public static event SetStart OnSetStart;
+    public delegate void SetEnd();
+    public static event SetEnd OnSetEnd;
+    public delegate void AllSetsEnd();
+    public static event AllSetsEnd OnAllSetsEnd;
     #endregion
 
-    [HideInInspector]
-    public bool lensTestActive = false;
-
-    public void RaiseRockSelected()
+    public void RaiseDoorClosed(float timeBetween)
     {
-        OnRockSelected?.Invoke();
+        OnDoorClosed?.Invoke(timeBetween);
     }
 
-    public void RaiseAcidTestStart()
+    public void RaiseTrialStart()
     {
-        OnAcidTestStart?.Invoke();
+        OnTrialStart?.Invoke();
     }
 
-    public void RaiseAcidTestEnd()
+    public void RaiseTrialEnd()
     {
-        //LevelProgress.Instance.currentRock.acidTestComplete = true;
-        OnAcidTestEnd?.Invoke();
-        /*if(LevelProgress.Instance.CheckIfCurrentRockTestsComplete())
-        {
-            RaiseAllTestsEnd();
-        }*/
+        OnTrialEnd?.Invoke();
     }
 
-    public void RaiseLensTestStart()
+    public void RaiseSetStart()
     {
-        OnLensTestStart?.Invoke();
-        lensTestActive = true;
+        OnSetStart?.Invoke();
     }
 
-    public void RaiseLensTestEnd()
+    public void RaiseSetEnd()
     {
-        OnLensTestEnd?.Invoke();
-        lensTestActive = false;
-        /*if (LevelProgress.Instance.CheckIfCurrentRockTestsComplete())
-        {
-            RaiseAllTestsEnd();
-        }*/
+        OnSetEnd?.Invoke();
     }
 
-    public void RaiseAllTestsEnd()
+    public void RaiseAllSetsEnd()
     {
-        OnAllTestsEnd?.Invoke();
-        /*if (!LevelProgress.Instance.CheckIfQuestionsNeeded())
-        {
-            RaiseRockEnd();
-        }
-        else
-        {
-            RaisePostQuestionsStart();
-        }*/
-    }
-
-    public void RaisePostQuestionsStart()
-    {
-        OnPostQuestionsStart?.Invoke();
-    }
-
-    public void RaisePostQuestionsEnd()
-    {
-        OnPostQuestionsEnd?.Invoke();
-        RaiseRockEnd();
-    }
-
-    public void RaiseRockEnd()
-    {
-        OnRockEnd?.Invoke();
-        /*if(LevelProgress.Instance.CheckIfAllRocksComplete())
-        {
-            RaiseAllRocksComplete();
-        }*/
-    }
-
-    public void RaiseAllRocksComplete()
-    {
-        OnAllRocksComplete?.Invoke();
-    }
-
-    public void RaiseSpatialTestStart()
-    {
-        OnSpatialTestStart?.Invoke();
-    }
-
-    public void RaiseSpatialTestEnd()
-    {
-        OnSpatialTestEnd?.Invoke();
+        OnAllSetsEnd?.Invoke();
     }
 }
