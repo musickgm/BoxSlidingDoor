@@ -41,7 +41,8 @@ public class DataManager : Singleton<DataManager>
 
     private void OnDisable()
     {
-
+        BoxEventSystem.OnTrialEnd -= RecordSelection;
+        BoxEventSystem.OnSetEnd -= SaveSelectionData;
     }
 
 

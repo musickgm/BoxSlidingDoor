@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 6122451032005682162}
   m_Layer: 0
   m_Name: Model
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -362,9 +362,10 @@ GameObject:
   - component: {fileID: 6121530253397146042}
   - component: {fileID: 6121920992048553726}
   - component: {fileID: 6123462559574271902}
+  - component: {fileID: 32657577}
   m_Layer: 0
   m_Name: Controller (left)
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -399,7 +400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectReference: {fileID: 0}
   objectReferenceIsPrefab: 0
-  hideControllersWhileHolding: 1
+  hideControllersWhileHolding: 0
   controllerAnchor: {fileID: 6155744403959091096}
   controllerAnchorOffset: {fileID: 6155501792150136312}
   ikTarget: {fileID: 0}
@@ -528,6 +529,20 @@ MonoBehaviour:
     m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_DeviceIndexChangedEvent, SteamVR,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   broadcastDeviceChanges: 1
+--- !u!136 &32657577
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6153695848204523144}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  m_Radius: 0.06
+  m_Height: 0.25
+  m_Direction: 2
+  m_Center: {x: 0, y: -0.02, z: -0.05}
 --- !u!1 &6153862105145555170
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,9 +555,10 @@ GameObject:
   - component: {fileID: 6122618473370346922}
   - component: {fileID: 6121549895690739466}
   - component: {fileID: 6121587577276669150}
+  - component: {fileID: 2079880636}
   m_Layer: 0
   m_Name: Controller (right)
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -577,7 +593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectReference: {fileID: 0}
   objectReferenceIsPrefab: 0
-  hideControllersWhileHolding: 1
+  hideControllersWhileHolding: 0
   controllerAnchor: {fileID: 6155407201976295962}
   controllerAnchorOffset: {fileID: 6157145470169035126}
   ikTarget: {fileID: 0}
@@ -706,3 +722,17 @@ MonoBehaviour:
     m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_DeviceIndexChangedEvent, SteamVR,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   broadcastDeviceChanges: 1
+--- !u!136 &2079880636
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6153862105145555170}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  m_Radius: 0.06
+  m_Height: 0.25
+  m_Direction: 2
+  m_Center: {x: 0, y: -0.02, z: -0.05}

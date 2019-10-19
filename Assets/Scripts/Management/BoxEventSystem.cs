@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// This handles the geology events.
+/// This handles the box events.
 /// </summary>
 public class BoxEventSystem : Singleton<BoxEventSystem>
 {
@@ -27,8 +27,10 @@ public class BoxEventSystem : Singleton<BoxEventSystem>
         OnDoorClosed?.Invoke(timeBetween);
     }
 
-    public void RaiseTrialStart()
+    public void RaiseTrialStart(int setNumber, int trialNumber)
     {
+        print("Starting set " + setNumber + "; trial " + trialNumber);
+        print("Radius = " + TrialManager.currentCondition.size + "; Frequency = " + TrialManager.currentCondition.frequency);
         OnTrialStart?.Invoke();
     }
 

@@ -1,0 +1,189 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2644031983098592690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2644031983098592688}
+  - component: {fileID: 2644031983098592691}
+  - component: {fileID: 2644031983098592689}
+  - component: {fileID: 2644031983098592694}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2644031983098592688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2644031983098592690}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2644031983098592691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2644031983098592690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d3b8953fd232e41a99206270306355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radiusValues:
+  - 0.1
+  - 0.2
+  frequencyValues:
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  frequencyGroup:
+  - list:
+    - size: 0
+      frequency: 0
+    - size: 0
+      frequency: 0
+    - size: 0
+      frequency: 0
+    - size: 1
+      frequency: 0
+    - size: 1
+      frequency: 0
+    - size: 1
+      frequency: 0
+  - list:
+    - size: 0
+      frequency: 1
+    - size: 0
+      frequency: 1
+    - size: 0
+      frequency: 1
+    - size: 1
+      frequency: 1
+    - size: 1
+      frequency: 1
+    - size: 1
+      frequency: 1
+  - list:
+    - size: 0
+      frequency: 2
+    - size: 0
+      frequency: 2
+    - size: 0
+      frequency: 2
+    - size: 1
+      frequency: 2
+    - size: 1
+      frequency: 2
+    - size: 1
+      frequency: 2
+  - list:
+    - size: 0
+      frequency: 3
+    - size: 0
+      frequency: 3
+    - size: 0
+      frequency: 3
+    - size: 1
+      frequency: 3
+    - size: 1
+      frequency: 3
+    - size: 1
+      frequency: 3
+  - list:
+    - size: 0
+      frequency: 4
+    - size: 0
+      frequency: 4
+    - size: 0
+      frequency: 4
+    - size: 1
+      frequency: 4
+    - size: 1
+      frequency: 4
+    - size: 1
+      frequency: 4
+  - list:
+    - size: 0
+      frequency: 5
+    - size: 0
+      frequency: 5
+    - size: 0
+      frequency: 5
+    - size: 1
+      frequency: 5
+    - size: 1
+      frequency: 5
+    - size: 1
+      frequency: 5
+  - list:
+    - size: 0
+      frequency: 6
+    - size: 0
+      frequency: 6
+    - size: 0
+      frequency: 6
+    - size: 1
+      frequency: 6
+    - size: 1
+      frequency: 6
+    - size: 1
+      frequency: 6
+  - list:
+    - size: 0
+      frequency: 7
+    - size: 0
+      frequency: 7
+    - size: 0
+      frequency: 7
+    - size: 1
+      frequency: 7
+    - size: 1
+      frequency: 7
+    - size: 1
+      frequency: 7
+  Sets: []
+--- !u!114 &2644031983098592689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2644031983098592690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935c73051fab85a4dbcd2ac2f2bc601b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2644031983098592694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2644031983098592690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce2dfd02622fe844c9bcef6a0a783866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

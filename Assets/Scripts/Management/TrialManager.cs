@@ -4,61 +4,78 @@ using UnityEngine;
 
 public class TrialManager : Singleton<TrialManager>
 {
-    private Condition currentCondition;
+    public static Condition currentCondition;
     private ConditionList currentSet;
     private int setIndex = -1;
     private int trialIndex = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     private void OnEnable()
     {
         BoxEventSystem.OnDoorClosed += DoorClosedChecks;
-        BoxEventSystem.OnSetStart += StartSet;
-        BoxEventSystem.OnTrialStart += StartTrial;
+        BoxEventSystem.OnSetStart += IncrementSet;
+        BoxEventSystem.OnTrialEnd += IncrementTrial;
     }
 
     private void OnDisable()
     {
         BoxEventSystem.OnDoorClosed -= DoorClosedChecks;
-        BoxEventSystem.OnSetStart -= StartSet;
-        BoxEventSystem.OnTrialStart -= StartTrial;
+        BoxEventSystem.OnSetStart -= IncrementSet;
+        BoxEventSystem.OnTrialEnd -= IncrementTrial;
     }
 
 
-    private void StartSet()
+
+
+    private void IncrementTrial(Condition _currentCondition, bool _success)
     {
-        setIndex++;
-        currentSet = ConditionManager.Instance.Sets[setIndex];
-        trialIndex = -1;
-        BoxEventSystem.Instance.RaiseTrialStart();
+        if(trialIndex >= currentSet.list.Count)
+        {
+            BoxEventSystem.Instance.RaiseSetEnd();
+            return;
+        }
+        else
+        {
+            trialIndex++;
+            currentCondition = currentSet.list[trialIndex];
+            BoxEventSystem.Instance.RaiseTrialStart(setIndex, trialIndex);
+        }
     }
 
-    private void StartTrial()
+    private void IncrementSet()
     {
-        trialIndex++;
-        currentCondition = currentSet.list[trialIndex];
-        DoorSlider.Instance.DetermineTimeBetweenCloses(ConditionManager.Instance.frequencyValues[(int)currentCondition.frequency]);
-        //Present ball
-        DoorSlider.Instance.StartCycle();
+        if(setIndex >= ConditionManager.Instance.Sets.Count)
+        {
+            BoxEventSystem.Instance.RaiseAllSetsEnd();
+            return;
+        }
+        else
+        {
+            setIndex++;
+            trialIndex = 0;
+            currentSet = ConditionManager.Instance.Sets[setIndex];
+            currentCondition = currentSet.list[trialIndex];
+            BoxEventSystem.Instance.RaiseTrialStart(setIndex, trialIndex);
+        }
     }
+
 
     private void DoorClosedChecks(float timeBetween)
     {
         //Check to see if the hand is still in the box.
-        /*if (true)
+        if (Box.Instance.NumberOfHands() > 0)
+        {
+            BoxEventSystem.Instance.RaiseTrialEnd(currentCondition, false);
+        }
+        //Check to see if the ball is still in the box. 
+        else if (!Box.Instance.IsBallInside())
         {
             BoxEventSystem.Instance.RaiseTrialEnd(currentCondition, true);
         }
-        //Check to see if the ball is still in the box. 
-        if (false)
+        else
         {
-            BoxEventSystem.Instance.RaiseTrialEnd(currentCondition, true);
-        }*/
-        Run.After(timeBetween, DoorSlider.Instance.StartCycle);
+            Run.After(timeBetween, DoorSlider.Instance.StartCycle);
+        }
     }
+
+
 }
