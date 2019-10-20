@@ -4,10 +4,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class ParticipantNumberSelection : MonoBehaviour
+public class ParticipantNumberSelection : Singleton<ParticipantNumberSelection>
 {
     public TextMeshProUGUI participantText;
-    public Button deleteButton;
     public AudioClip clickSound;
     private string participantNumberString = "";
     public List<int> participantNumbers = new List<int>();
@@ -22,7 +21,6 @@ public class ParticipantNumberSelection : MonoBehaviour
             return;
         }
         participantNumbers.Add(number);
-        deleteButton.interactable = true;
         UpdateParticipantText();
     }
 
@@ -34,7 +32,6 @@ public class ParticipantNumberSelection : MonoBehaviour
         }
         if (participantNumbers.Count <= 0)
         {
-            deleteButton.interactable = false;
             return;
         }
         participantNumbers.RemoveAt(participantNumbers.Count - 1);

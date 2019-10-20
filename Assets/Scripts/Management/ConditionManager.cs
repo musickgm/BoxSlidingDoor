@@ -46,7 +46,7 @@ public class ConditionManager : Singleton<ConditionManager>
     private void Start()
     {
         InitializeLists();
-        BoxEventSystem.Instance.RaiseSetStart();
+        BoxEventSystem.Instance.RaiseStartExperiment();
     }
 
     void InitializeLists()

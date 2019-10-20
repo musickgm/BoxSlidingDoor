@@ -88,6 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7892127717379174141}
   - component: {fileID: 7875446784922631757}
+  - component: {fileID: 1718368685974045607}
   m_Layer: 0
   m_Name: PickUpSphere
   m_TagString: Ball
@@ -130,6 +131,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1718368685974045607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7893733046965032957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b7d6dee009eba24c85852c084bf26e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionScript: {fileID: 7790257923509135909}
+  recordDropEvent: 1
 --- !u!1 &7894026135613022113
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +318,7 @@ MonoBehaviour:
   defaultMats:
   - {fileID: 0}
   hoverMats:
-  - {fileID: 2100000, guid: 6aac974665bca714b9d99ddad010943c, type: 2}
+  - {fileID: 2100000, guid: 1125e73489c57e34ba75298601bdc273, type: 2}
   globalToggleToPickup: 1
   toggleToPickup: 0
   pickupEvent:
@@ -332,7 +347,7 @@ MonoBehaviour:
   pickupSound: {fileID: 0}
   dropSound: {fileID: 0}
   forceGrabSound: {fileID: 8300000, guid: 54b07a1d2d87f5348ab9eaa6c86a25ad, type: 3}
-  hoverFoldout: 0
+  hoverFoldout: 1
   triggersFoldout: 0
   soundsFoldout: 0
   ikFoldout: 1

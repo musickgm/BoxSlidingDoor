@@ -6,7 +6,7 @@ public class Box : Singleton<Box>
 {
     public GameObject ballPrefab;
     public Transform spawnPosition;
-    private GameObject ballClone;
+    public static Ball ballClone;
     private bool ballInsideStatus = true;
     private int numberOfHandsInside = 0;
 
@@ -14,11 +14,13 @@ public class Box : Singleton<Box>
     private void OnEnable()
     {
         BoxEventSystem.OnTrialStart += NewTrial;
+        BoxEventSystem.OnTrialEnd += DestroyBallIfFail;
     }
 
     private void OnDisable()
     {
         BoxEventSystem.OnTrialStart -= NewTrial;
+        BoxEventSystem.OnTrialEnd -= DestroyBallIfFail;
     }
 
 
@@ -60,17 +62,23 @@ public class Box : Singleton<Box>
 
     private void NewTrial()
     {
-        ballClone = Instantiate(ballPrefab, spawnPosition.position, Quaternion.identity);
-        float scale = ConditionManager.Instance.radiusValues[(int)TrialManager.currentCondition.size] * 2;
-        ballClone.transform.localScale = new Vector3(scale, scale, scale);
-        VRInteraction.VRInteractableItem interactableItem = ballClone.GetComponentInChildren<VRInteraction.VRInteractableItem>();
-        if(interactableItem != null)
+        if(ballClone != null)
         {
-            interactableItem.interactionDistance = scale;
+            ballClone.DestroySelf();
         }
+        GameObject clone = Instantiate(ballPrefab, spawnPosition.position, Quaternion.identity);
+        ballClone = clone.GetComponent<Ball>();
+        float scale = ConditionManager.Instance.radiusValues[(int)TrialManager.currentCondition.size] * 2;
+        ballClone.SetScale(scale);
     }
 
-
+    private void DestroyBallIfFail(Condition _currentCondition, bool _success)
+    {
+        if(!_success && ballClone != null)
+        {
+            ballClone.DestroySelf();
+        }
+    }
 
 
 }

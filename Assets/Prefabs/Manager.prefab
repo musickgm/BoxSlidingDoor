@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2644031983098592691}
   - component: {fileID: 2644031983098592689}
   - component: {fileID: 2644031983098592694}
+  - component: {fileID: 846737593564248306}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -46,17 +47,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radiusValues:
+  - 0.05
   - 0.1
-  - 0.2
   frequencyValues:
-  - 8
-  - 9
   - 10
-  - 11
   - 12
-  - 13
   - 14
-  - 15
+  - 16
+  - 18
+  - 22
+  - 26
+  - 30
   frequencyGroup:
   - list:
     - size: 0
@@ -175,6 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935c73051fab85a4dbcd2ac2f2bc601b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBetweenTrials: 3
 --- !u!114 &2644031983098592694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,5 +187,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce2dfd02622fe844c9bcef6a0a783866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &846737593564248306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2644031983098592690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca504c1e8de028a43a5a5a4c2cf5a578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

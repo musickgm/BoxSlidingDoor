@@ -37,7 +37,7 @@ public static class SaveLoadManager
         if (!Directory.Exists(savePath))
         {
             Directory.CreateDirectory(savePath);
-            //Debug.Log(savePath);
+            Debug.Log(savePath);
         }
         string jsonDataString = JsonUtility.ToJson(saveObject);
         File.WriteAllText(savePath + "/" + fileName + ".json", jsonDataString);

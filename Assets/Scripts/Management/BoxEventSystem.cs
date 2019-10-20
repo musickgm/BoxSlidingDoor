@@ -7,7 +7,11 @@ using UnityEngine;
 /// </summary>
 public class BoxEventSystem : Singleton<BoxEventSystem>
 {
+    public float timeBetweenTrials = 3;
+
     #region delegates and events
+    public delegate void StartExperiment();
+    public static event StartExperiment OnStartExperiment;
     public delegate void DoorClosed(float timeBetween);
     public static event DoorClosed OnDoorClosed;
     public delegate void TrialStart();
@@ -22,6 +26,11 @@ public class BoxEventSystem : Singleton<BoxEventSystem>
     public static event AllSetsEnd OnAllSetsEnd;
     #endregion
 
+    public void RaiseStartExperiment()
+    {
+        OnStartExperiment?.Invoke();
+    }
+
     public void RaiseDoorClosed(float timeBetween)
     {
         OnDoorClosed?.Invoke(timeBetween);
@@ -29,9 +38,10 @@ public class BoxEventSystem : Singleton<BoxEventSystem>
 
     public void RaiseTrialStart(int setNumber, int trialNumber)
     {
-        print("Starting set " + setNumber + "; trial " + trialNumber);
-        print("Radius = " + TrialManager.currentCondition.size + "; Frequency = " + TrialManager.currentCondition.frequency);
-        OnTrialStart?.Invoke();
+        print("Starting set " + (setNumber+1) + "; trial " + (trialNumber+1) + 
+            "(Radius = " + TrialManager.currentCondition.size + "; Frequency = " + TrialManager.currentCondition.frequency + ")");
+        IEnumerator trialWait = WaitBetweenTrials();
+        StartCoroutine(trialWait);
     }
 
     public void RaiseTrialEnd(Condition currentCondition, bool success)
@@ -39,9 +49,10 @@ public class BoxEventSystem : Singleton<BoxEventSystem>
         OnTrialEnd?.Invoke(currentCondition, success);
     }
 
-    public void RaiseSetStart()
+    public void RaiseSetStart(int setNumber)
     {
         OnSetStart?.Invoke();
+        RaiseTrialStart(setNumber, 0);
     }
 
     public void RaiseSetEnd()
@@ -52,5 +63,12 @@ public class BoxEventSystem : Singleton<BoxEventSystem>
     public void RaiseAllSetsEnd()
     {
         OnAllSetsEnd?.Invoke();
+    }
+
+
+    private IEnumerator WaitBetweenTrials()
+    {
+        yield return new WaitForSeconds(timeBetweenTrials);
+        OnTrialStart?.Invoke();
     }
 }

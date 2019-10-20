@@ -9,20 +9,25 @@ public class DoorSlider : Singleton<DoorSlider>
     public float doorSpeed;
     public Transform leftHand;
     public Transform rightHand;
+    public Color goodColor;
+    public Color badColor;
 
     private float timeBetweenCloses;
     private Transform door;
     private float journeyLength;
+    private IEnumerator doorCycle;
 
 
     private void OnEnable()
     {
         BoxEventSystem.OnTrialStart += NewTrial;
+        BoxEventSystem.OnTrialEnd += SetLasersAlarm;
     }
 
     private void OnDisable()
     {
         BoxEventSystem.OnTrialStart -= NewTrial;
+        BoxEventSystem.OnTrialEnd -= SetLasersAlarm;
     }
 
     // Start is called before the first frame update  
@@ -39,19 +44,34 @@ public class DoorSlider : Singleton<DoorSlider>
         if (GetComponent<Collider>().bounds.Contains(leftHand.position)
             || GetComponent<Collider>().bounds.Contains(rightHand.position))
         {
-            print("Hand cookies??");
+            TrialManager.Instance.SetAlarm();
         }
     }
 
     private void NewTrial()
     {
         DetermineTimeBetweenCloses(ConditionManager.Instance.frequencyValues[(int)TrialManager.currentCondition.frequency]);
+        SetLasers(false);
         StartCycle();
     }
 
     public void StartCycle()
     {
-        IEnumerator doorCycle = CycleDoor();
+        if(doorCycle != null)
+        {
+            StopCoroutine(doorCycle);
+        }
+        doorCycle = CycleDoor();
+        StartCoroutine(doorCycle);
+    }
+
+    public void EndCycle()
+    {
+        if(doorCycle != null)
+        {
+            StopCoroutine(doorCycle);
+        }
+        doorCycle = ReturnDoor();
         StartCoroutine(doorCycle);
     }
 
@@ -91,6 +111,26 @@ public class DoorSlider : Singleton<DoorSlider>
         //yield return new WaitForSeconds(timeBetweenCloses);
     }
 
+    private IEnumerator ReturnDoor()
+    {
+        yield return new WaitForEndOfFrame();
+        float fracJourney = 0;
+        float elapsedTime = 0;
+        float distCovered;
+        Vector3 currentPosition = door.localPosition;
+        float returnJourneyLength = Vector3.Distance(currentPosition, doorClosedPosition);
+
+        while (fracJourney < 1)
+        {
+            elapsedTime += Time.deltaTime;
+            distCovered = elapsedTime * doorSpeed;
+            fracJourney = distCovered / returnJourneyLength;
+
+            door.localPosition = Vector3.Lerp(currentPosition, doorClosedPosition, fracJourney);
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
     public void DetermineTimeBetweenCloses(float frequency)
     {
         float timeForACycle = 60 / frequency;
@@ -100,14 +140,40 @@ public class DoorSlider : Singleton<DoorSlider>
 
     private void OnTriggerEnter(Collider other)
     {
-        print("Collision");
         if(other.CompareTag("Hand"))
         {
             print("Hand in cookie jar!");
+            TrialManager.Instance.SetAlarm();
         }
         else if(other.CompareTag("Ball"))
         {
-            print("Ball collision");
+            TrialManager.Instance.SetAlarm();
         }
+    }
+
+    private void SetLasersAlarm(Condition _condition, bool _success)
+    {
+        if(!_success)
+        {
+            SetLasers(true);
+        }
+    }
+
+    private void SetLasers(bool alarmed)
+    {
+        Weapon lasers = GetComponent<Weapon>();
+        if(lasers != null)
+        {
+            if(alarmed)
+            {
+                lasers.bladeColor = badColor;
+            }
+            else
+            {
+                lasers.bladeColor = goodColor;
+            }
+            lasers.InitializeBladeColor();
+        }
+
     }
 }
