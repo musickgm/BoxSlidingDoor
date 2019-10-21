@@ -35,8 +35,15 @@ public class BasketCollider : MonoBehaviour
             else if (basketType == BasketType.start)
             {
                 ParticipantNumberSelection.Instance.SaveParticipantNumber();
-                SceneManager.LoadScene("Main");
+                //SceneManager.LoadScene("Main");
+                StartCoroutine(WaitThenLoad());
             }
         }
+    }
+
+    private IEnumerator WaitThenLoad()
+    {
+        yield return new WaitForSeconds(2);
+        Valve.VR.SteamVR_LoadLevel.Begin("Main");
     }
 }

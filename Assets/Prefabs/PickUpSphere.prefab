@@ -105,7 +105,7 @@ Transform:
   m_GameObject: {fileID: 7893733046965032957}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.545, y: 1.081, z: -0.787}
-  m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 7897487561718336025}
   - {fileID: 7892234172966011673}
@@ -303,7 +303,7 @@ MonoBehaviour:
   throwBoost: 1
   globalFollowForce: 1
   followForce: 1
-  globalInteractionDistance: 1
+  globalInteractionDistance: 0
   interactionDistance: 0.1
   globalLimitAcceptedAction: 0
   limitAcceptedAction: 0
