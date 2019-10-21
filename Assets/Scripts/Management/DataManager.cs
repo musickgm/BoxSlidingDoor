@@ -49,12 +49,10 @@ public class DataManager : Singleton<DataManager>
     void SaveSelectionData()
     {
         SaveLoadManager.Save(selectData, "SelectionData");
-        print("SAVING...");
     }
 
     public void RecordSelection(Condition currentCondition, bool success)
     {
-        print("recorded selection");
         ConditionStruct currentSelection;
         currentSelection.time = Time.realtimeSinceStartup;
         currentSelection.selectionType = selectionType;

@@ -20,6 +20,11 @@ public class Ball : MonoBehaviour
     {
         transform.localScale = new Vector3(_scale, _scale, _scale);
         interactionScript.interactionDistance = _scale;
+        print(_scale);
+        if(_scale < 0.15)
+        {
+            interactionScript.interactionDistance += 0.05f;
+        }
     }
 
     public void DestroySelf()

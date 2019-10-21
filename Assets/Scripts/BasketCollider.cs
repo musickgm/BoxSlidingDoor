@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+//using UnityEngine.SceneManagement;
 
 public class BasketCollider : MonoBehaviour
 {
@@ -36,7 +36,8 @@ public class BasketCollider : MonoBehaviour
             {
                 ParticipantNumberSelection.Instance.SaveParticipantNumber();
                 //SceneManager.LoadScene("Main");
-                StartCoroutine(WaitThenLoad());
+                //StartCoroutine(WaitThenLoad());
+                Valve.VR.SteamVR_LoadLevel.Begin("Main");
             }
         }
     }

@@ -6,13 +6,13 @@ public class DoorSlider : Singleton<DoorSlider>
 {
     public Vector3 doorOpenPosition;
     public Vector3 doorClosedPosition;
-    public float doorSpeed;
     public Transform leftHand;
     public Transform rightHand;
     public Color goodColor;
     public Color badColor;
 
-    private float timeBetweenCloses;
+    private float doorSpeed;
+    private float timeBetweenCloses = 0;
     private Transform door;
     private float journeyLength;
     private IEnumerator doorCycle;
@@ -38,11 +38,13 @@ public class DoorSlider : Singleton<DoorSlider>
 
     }
 
-
-    private void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        if (GetComponent<Collider>().bounds.Contains(leftHand.position)
-            || GetComponent<Collider>().bounds.Contains(rightHand.position))
+        if (other.CompareTag("Hand"))
+        {
+            TrialManager.Instance.SetAlarm();
+        }
+        else if (other.CompareTag("Ball"))
         {
             TrialManager.Instance.SetAlarm();
         }
@@ -134,22 +136,12 @@ public class DoorSlider : Singleton<DoorSlider>
     public void DetermineTimeBetweenCloses(float frequency)
     {
         float timeForACycle = 60 / frequency;
-        float timeToBeStill = timeForACycle - ((journeyLength * 2) / doorSpeed);
-        timeBetweenCloses = timeToBeStill / 2;
+        //float timeToBeStill = timeForACycle - ((journeyLength * 2) / doorSpeed);
+        //timeBetweenCloses = timeToBeStill / 2;
+        doorSpeed = (journeyLength * 2) / timeForACycle;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Hand"))
-        {
-            print("Hand in cookie jar!");
-            TrialManager.Instance.SetAlarm();
-        }
-        else if(other.CompareTag("Ball"))
-        {
-            TrialManager.Instance.SetAlarm();
-        }
-    }
+
 
     private void SetLasersAlarm(Condition _condition, bool _success)
     {
