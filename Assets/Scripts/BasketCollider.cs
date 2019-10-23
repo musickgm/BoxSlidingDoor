@@ -17,7 +17,7 @@ public class BasketCollider : MonoBehaviour
             Ball ball = other.GetComponentInParent<Ball>();
             if (ball != null)
             {
-                ball.DestroySelf();
+                ball.DestroySelf(1);
             }
             if(basketType == BasketType.goal)
             {

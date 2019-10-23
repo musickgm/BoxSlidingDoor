@@ -27,9 +27,16 @@ public class Ball : MonoBehaviour
         }
     }
 
-    public void DestroySelf()
+    public void DestroySelf(float time = 0)
     {
         interactionScript.dropEvent.RemoveAllListeners();
+        StartCoroutine(WaitThenDestroy(time));
+    }
+
+    IEnumerator WaitThenDestroy(float time)
+    {
+        yield return new WaitForSeconds(time);
         Destroy(this.gameObject);
     }
+
 }

@@ -12,10 +12,11 @@ public class SelectionData
 [System.Serializable]
 public struct ConditionStruct
 {
+    public int participantNumber;
     public float time;
     public DataManager.SelectionType selectionType;
     public ObjectSize size;
-    public DoorFrequency frequency;
+    public float frequency;
     public bool successful;
 }
 
@@ -54,10 +55,11 @@ public class DataManager : Singleton<DataManager>
     public void RecordSelection(Condition currentCondition, bool success)
     {
         ConditionStruct currentSelection;
+        currentSelection.participantNumber = participantNumber;
         currentSelection.time = Time.realtimeSinceStartup;
         currentSelection.selectionType = selectionType;
         currentSelection.size = currentCondition.size;
-        currentSelection.frequency = currentCondition.frequency;
+        currentSelection.frequency = ConditionManager.Instance.frequencyValues[(int)TrialManager.currentCondition.frequency];
         currentSelection.successful = success;
         selectData.playerSelections.Add(currentSelection);
     }
