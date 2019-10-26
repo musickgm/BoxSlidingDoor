@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2644031983098592688}
   - component: {fileID: 2644031983098592691}
+  - component: {fileID: 8385342733761673631}
   - component: {fileID: 2644031983098592689}
   - component: {fileID: 2644031983098592694}
   - component: {fileID: 846737593564248306}
@@ -164,6 +165,25 @@ MonoBehaviour:
     - size: 1
       frequency: 7
   Sets: []
+  selectionType: 0
+--- !u!114 &8385342733761673631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2644031983098592690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f16bfa47c312b44ba1c52d49d83406c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectionSetting: 2
+  viveControllerPrefab: {fileID: 6153064960960319822, guid: 9c0402878509d7f4590cfb37dc554a65,
+    type: 3}
+  leapGesturePrefab: {fileID: 1876357860844202888, guid: 1875efb35df3863489d925eb30532690,
+    type: 3}
+  spawnPoint: {fileID: 0}
 --- !u!114 &2644031983098592689
 MonoBehaviour:
   m_ObjectHideFlags: 0

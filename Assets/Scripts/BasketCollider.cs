@@ -17,11 +17,11 @@ public class BasketCollider : MonoBehaviour
             Ball ball = other.GetComponentInParent<Ball>();
             if (ball != null)
             {
-                ball.DestroySelf(1);
+                ball.DestroySelf(true, true, 1);
             }
             if(basketType == BasketType.goal)
             {
-                print("Basket made!");
+                //print("Basket made!");
                 //Trigger some kind of sound, particles, and UI response.
             }
             else if (basketType == BasketType.number)

@@ -23,9 +23,11 @@ namespace Leap.Unity.Examples {
                                    || target.workstationModeTween.targetTransform == null
                                    || target.workstationModeTween.startTransform == null
                                    || target.workstationModeTween.endTransform == null
+#pragma warning disable CS0618 // Type or member is obsolete
                                    || PrefabUtility.GetPrefabType(target.gameObject) == PrefabType.Prefab);
+#pragma warning restore CS0618 // Type or member is obsolete
 
-      EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.BeginHorizontal();
 
       if (GUILayout.Button(new GUIContent("Open Workstation",
                                           "If the workstationModeTween is fully configured, you can "

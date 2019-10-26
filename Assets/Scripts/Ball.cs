@@ -5,31 +5,69 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public VRInteraction.VRInteractableItem interactionScript;
+    public Leap.Unity.Interaction.InteractionBehaviour interactionScriptLeap;
     public bool recordDropEvent = true;
+
+    [ReadOnly]
+    public int setNumber;
+    [ReadOnly]
+    public int trialNumber;
+    private bool destroying = false;
 
 
     private void Start()
     {
         if(recordDropEvent)
         {
-            interactionScript.dropEvent.AddListener(TrialManager.Instance.ReleaseBall);
+            if(interactionScript != null)
+            {
+                interactionScript.dropEvent.AddListener(TrialManager.Instance.ReleaseBall);
+            }
+            else if(interactionScriptLeap != null)
+            {
+                interactionScriptLeap.OnGraspEnd += TrialManager.Instance.ReleaseBall;
+            }
         }
     }
 
     public void SetScale(float _scale)
     {
         transform.localScale = new Vector3(_scale, _scale, _scale);
-        interactionScript.interactionDistance = _scale;
-        print(_scale);
-        if(_scale < 0.15)
+        if(interactionScript != null)
         {
-            interactionScript.interactionDistance += 0.05f;
+            interactionScript.interactionDistance = _scale;
+            if (_scale < 0.15)
+            {
+                interactionScript.interactionDistance += 0.05f;
+            }
         }
     }
 
-    public void DestroySelf(float time = 0)
+    public void SetTrial(int _setNumber, int _trialNumber)
     {
-        interactionScript.dropEvent.RemoveAllListeners();
+        setNumber = _setNumber;
+        trialNumber = _trialNumber;
+    }
+
+    public void DestroySelf(bool attemptSuccess, bool basketSuccess, float time = 0)
+    {
+        if(destroying)
+        {
+            return;
+        }
+        destroying = true;
+        if(interactionScript != null)
+        {
+            interactionScript.dropEvent.RemoveAllListeners();
+        }
+        else if (interactionScriptLeap != null)
+        {
+            interactionScriptLeap.OnGraspEnd -= TrialManager.Instance.ReleaseBall;
+        }
+        if(ScoreBoard.Instance != null)
+        {
+            ScoreBoard.Instance.UpdateCell(attemptSuccess, basketSuccess, setNumber, trialNumber);
+        }
         StartCoroutine(WaitThenDestroy(time));
     }
 

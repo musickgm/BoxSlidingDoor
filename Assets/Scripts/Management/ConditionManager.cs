@@ -21,6 +21,7 @@ public class ConditionList
 
 public enum ObjectSize { size1, size2, size3, size4, size5};
 public enum DoorFrequency { a, b, c, d, e, f, g, h};
+public enum SelectionType { controller, gesture, inheritPreviousScene}
 
 /// <summary>
 /// Condition manager manages our sets of trials. 
@@ -37,15 +38,18 @@ public class ConditionManager : Singleton<ConditionManager>
     [Tooltip("Set size to the number of different frequencies")]
     public List<ConditionList> frequencyGroup = new List<ConditionList>();
 
-
-
     [ReadOnly] public List<ConditionList> Sets = new List<ConditionList>();
+    [ReadOnly]
+    public SelectionType selectionType;
+
     private int numSets;
     private int numTrialsInSet;
 
     private void Start()
     {
         InitializeLists();
+        selectionType = PlayerSpawner.selectionType;
+        DataManager.SetSelectionType(selectionType);
         BoxEventSystem.Instance.RaiseStartExperiment();
     }
 

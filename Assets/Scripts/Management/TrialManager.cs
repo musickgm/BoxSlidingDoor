@@ -6,8 +6,10 @@ public class TrialManager : Singleton<TrialManager>
 {
     public static Condition currentCondition;
     private ConditionList currentSet;
-    private int setIndex = -1;
-    private int trialIndex = 0;
+    [HideInInspector]
+    public int setIndex = -1;
+    [HideInInspector]
+    public int trialIndex = 0;
     private bool alarmed = false;
 
     private void OnEnable()
@@ -112,7 +114,7 @@ public class TrialManager : Singleton<TrialManager>
         BoxEventSystem.Instance.RaiseTrialEnd(currentCondition, false);
         if(Box.ballClone != null)
         {
-            Box.ballClone.DestroySelf();
+            Box.ballClone.DestroySelf(false, false);
         }
         DoorSlider.Instance.EndCycle();
     }

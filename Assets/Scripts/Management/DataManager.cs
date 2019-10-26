@@ -14,8 +14,8 @@ public struct ConditionStruct
 {
     public int participantNumber;
     public float time;
-    public DataManager.SelectionType selectionType;
-    public ObjectSize size;
+    public string selectionType;
+    public string size;
     public float frequency;
     public bool successful;
 }
@@ -25,13 +25,11 @@ public class DataManager : Singleton<DataManager>
 {
     public static int participantNumber;
     public static SelectionType selectionType;
-    public enum SelectionType { gesture, controller }
     private static SelectionData selectData = new SelectionData();
 
 
     private void Start()
     {
-
     }
 
     private void OnEnable()
@@ -57,8 +55,8 @@ public class DataManager : Singleton<DataManager>
         ConditionStruct currentSelection;
         currentSelection.participantNumber = participantNumber;
         currentSelection.time = Time.realtimeSinceStartup;
-        currentSelection.selectionType = selectionType;
-        currentSelection.size = currentCondition.size;
+        currentSelection.selectionType = selectionType.ToString();
+        currentSelection.size = currentCondition.size.ToString();
         currentSelection.frequency = ConditionManager.Instance.frequencyValues[(int)TrialManager.currentCondition.frequency];
         currentSelection.successful = success;
         selectData.playerSelections.Add(currentSelection);

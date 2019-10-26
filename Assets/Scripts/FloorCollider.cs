@@ -11,7 +11,7 @@ public class FloorCollider : MonoBehaviour
             Ball ball = other.GetComponentInParent<Ball>();
             if(ball != null)
             {
-                ball.DestroySelf(1);
+                ball.DestroySelf(true, false, 1);
             }
         }
     }

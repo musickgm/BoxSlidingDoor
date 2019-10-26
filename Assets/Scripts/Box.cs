@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Box : Singleton<Box>
 {
-    public GameObject ballPrefab;
+    public GameObject ballPrefabController;
+    public GameObject ballPrefabGesture;
     public Transform spawnPosition;
     public static Ball ballClone;
     private bool ballInsideStatus = true;
@@ -62,12 +63,21 @@ public class Box : Singleton<Box>
 
     private void NewTrial()
     {
-        if(ballClone != null)
+        if (ballClone != null)
         {
-            ballClone.DestroySelf();
+            ballClone.DestroySelf(true, false);
         }
-        GameObject clone = Instantiate(ballPrefab, spawnPosition.position, Quaternion.identity);
+        GameObject clone = null;
+        if (ConditionManager.Instance.selectionType == SelectionType.controller)
+        {
+            clone = Instantiate(ballPrefabController, spawnPosition.position, Quaternion.identity);
+        }
+        else if (ConditionManager.Instance.selectionType == SelectionType.gesture)
+        {
+            clone = Instantiate(ballPrefabGesture, spawnPosition.position, Quaternion.identity);
+        }
         ballClone = clone.GetComponent<Ball>();
+        ballClone.SetTrial(TrialManager.Instance.setIndex, TrialManager.Instance.trialIndex);
         float scale = ConditionManager.Instance.radiusValues[(int)TrialManager.currentCondition.size] * 2;
         ballClone.SetScale(scale);
     }
@@ -76,7 +86,7 @@ public class Box : Singleton<Box>
     {
         if(!_success && ballClone != null)
         {
-            ballClone.DestroySelf();
+            ballClone.DestroySelf(false, false);
         }
     }
 

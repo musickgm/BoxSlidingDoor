@@ -58,12 +58,14 @@ namespace Leap.Unity.Interaction {
     }
 
     private void drawHandEditor(Rect controlRect) {
-      // Determine whether the target object is a prefab. AttachmentPoints cannot be edited on prefabs.
-      PrefabType prefabType = PrefabUtility.GetPrefabType(target.gameObject);
-      bool isTargetPrefab = prefabType == PrefabType.Prefab || prefabType == PrefabType.ModelPrefab;
+            // Determine whether the target object is a prefab. AttachmentPoints cannot be edited on prefabs.
+#pragma warning disable CS0618 // Type or member is obsolete
+            PrefabType prefabType = PrefabUtility.GetPrefabType(target.gameObject);
+            bool isTargetPrefab = prefabType == PrefabType.Prefab || prefabType == PrefabType.ModelPrefab;
+#pragma warning restore CS0618 // Type or member is obsolete
 
-      // Image container.
-      Rect imageContainerRect = controlRect;
+            // Image container.
+            Rect imageContainerRect = controlRect;
       EditorGUI.DrawRect(imageContainerRect, new Color(0.2F, 0.2F, 0.2F));
       imageContainerRect.x += 1; imageContainerRect.y += 1; imageContainerRect.width -= 2; imageContainerRect.height -= 2;
       EditorGUI.DrawRect(imageContainerRect, new Color(0.6F, 0.6F, 0.6F));

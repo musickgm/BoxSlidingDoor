@@ -55,14 +55,18 @@ namespace Leap.Unity.Interaction {
     void updateTrackingData() {
       if (_isXRNodeSet) {
 
-        var position = InputTracking.GetLocalPosition(xrNode);
-        var rotation = InputTracking.GetLocalRotation(xrNode);
+#pragma warning disable CS0618 // Type or member is obsolete
+                var position = InputTracking.GetLocalPosition(xrNode);
+#pragma warning restore CS0618 // Type or member is obsolete
+#pragma warning disable CS0618 // Type or member is obsolete
+                var rotation = InputTracking.GetLocalRotation(xrNode);
+#pragma warning restore CS0618 // Type or member is obsolete
 
-        // Unfortunately, the only alternative to checking the controller's position and
-        // rotation for whether or not it is tracked is to request an allocated string
-        // array of all currently-connected joysticks, which would allocate garbage
-        // every frame, so it's unusable.
-        _isTrackingController = position != Vector3.zero && rotation != Quaternion.identity;
+                // Unfortunately, the only alternative to checking the controller's position and
+                // rotation for whether or not it is tracked is to request an allocated string
+                // array of all currently-connected joysticks, which would allocate garbage
+                // every frame, so it's unusable.
+                _isTrackingController = position != Vector3.zero && rotation != Quaternion.identity;
 
         Transform rigTransform = Camera.main.transform.parent;
         if (rigTransform != null) {

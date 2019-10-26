@@ -1623,7 +1623,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd1763c6a77dad4385af8e6c3e04037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballPrefab: {fileID: 7893733046965032957, guid: 8b441e0bff6ecf44b8330936eca470ab,
+  ballPrefabController: {fileID: 7893733046965032957, guid: 8b441e0bff6ecf44b8330936eca470ab,
+    type: 3}
+  ballPrefabGesture: {fileID: 1899726885188629136, guid: 9c7773c100a914640a8631fe0f7989c5,
     type: 3}
   spawnPosition: {fileID: 3349814160176939014}
 --- !u!65 &8255142380026547495
@@ -1979,7 +1981,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorOpenPosition: {x: -0.7, y: 0, z: -0.35}
   doorClosedPosition: {x: 0, y: 0, z: -0.35}
-  doorSpeed: 1
   leftHand: {fileID: 0}
   rightHand: {fileID: 0}
   goodColor: {r: 0.2, g: 0.8, b: 0.2627451, a: 1}

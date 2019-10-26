@@ -804,7 +804,7 @@ namespace Leap.Unity.Interaction {
     #region Unity Events (Internal)
 
     [SerializeField]
-    private EnumEventTable _eventTable;
+    private EnumEventTable _eventTable = null;
 
     public enum EventType {
       OnAttachedToAnchor = 100,

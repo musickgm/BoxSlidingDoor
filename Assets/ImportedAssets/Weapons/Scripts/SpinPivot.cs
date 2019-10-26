@@ -10,13 +10,13 @@ using System.Collections;
 public class SpinPivot : MonoBehaviour {
 
     [SerializeField]
-    private Vector3 spinXYZ;
+    private Vector3 spinXYZ = new Vector3(0, 0, 0);
 
     [SerializeField]
-    private float speed;
+    private float speed = 0;
 
     [SerializeField]
-    private Transform pivot;
+    private Transform pivot = null;
 
     void Start () {
 	}

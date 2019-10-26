@@ -54,7 +54,7 @@ namespace Leap.Unity.Interaction {
     [Tooltip("Which hand will hold this controller? This property cannot be changed "
            + "at runtime.")]
     [SerializeField, EditTimeOnly]
-    private Chirality _chirality;
+    private Chirality _chirality = Chirality.Left;
     public Chirality chirality { get { return _chirality; } }
 
     [Tooltip("Whether to continuously poll attached joystick data for a joystick that "
