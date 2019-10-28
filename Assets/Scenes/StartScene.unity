@@ -166,11 +166,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpSphere (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 1718368685974045607, guid: 8b441e0bff6ecf44b8330936eca470ab,
-        type: 3}
-      propertyPath: recordDropEvent
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7892127717379174141, guid: 8b441e0bff6ecf44b8330936eca470ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -224,6 +219,11 @@ PrefabInstance:
     - target: {fileID: 7892127717379174141, guid: 8b441e0bff6ecf44b8330936eca470ab,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718368685974045607, guid: 8b441e0bff6ecf44b8330936eca470ab,
+        type: 3}
+      propertyPath: recordDropEvent
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7790257923509135909, guid: 8b441e0bff6ecf44b8330936eca470ab,
@@ -598,11 +598,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpSphere
       objectReference: {fileID: 0}
-    - target: {fileID: 1718368685974045607, guid: 8b441e0bff6ecf44b8330936eca470ab,
-        type: 3}
-      propertyPath: recordDropEvent
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7892127717379174141, guid: 8b441e0bff6ecf44b8330936eca470ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -656,6 +651,11 @@ PrefabInstance:
     - target: {fileID: 7892127717379174141, guid: 8b441e0bff6ecf44b8330936eca470ab,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718368685974045607, guid: 8b441e0bff6ecf44b8330936eca470ab,
+        type: 3}
+      propertyPath: recordDropEvent
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7790257923509135909, guid: 8b441e0bff6ecf44b8330936eca470ab,
@@ -873,11 +873,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpSphere (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 1718368685974045607, guid: 8b441e0bff6ecf44b8330936eca470ab,
-        type: 3}
-      propertyPath: recordDropEvent
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7892127717379174141, guid: 8b441e0bff6ecf44b8330936eca470ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -931,6 +926,11 @@ PrefabInstance:
     - target: {fileID: 7892127717379174141, guid: 8b441e0bff6ecf44b8330936eca470ab,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718368685974045607, guid: 8b441e0bff6ecf44b8330936eca470ab,
+        type: 3}
+      propertyPath: recordDropEvent
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7790257923509135909, guid: 8b441e0bff6ecf44b8330936eca470ab,
@@ -1247,11 +1247,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpSphere (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 1718368685974045607, guid: 8b441e0bff6ecf44b8330936eca470ab,
-        type: 3}
-      propertyPath: recordDropEvent
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7892127717379174141, guid: 8b441e0bff6ecf44b8330936eca470ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1305,6 +1300,11 @@ PrefabInstance:
     - target: {fileID: 7892127717379174141, guid: 8b441e0bff6ecf44b8330936eca470ab,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718368685974045607, guid: 8b441e0bff6ecf44b8330936eca470ab,
+        type: 3}
+      propertyPath: recordDropEvent
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7790257923509135909, guid: 8b441e0bff6ecf44b8330936eca470ab,
@@ -1545,11 +1545,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpSphere (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 1718368685974045607, guid: 8b441e0bff6ecf44b8330936eca470ab,
-        type: 3}
-      propertyPath: recordDropEvent
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7892127717379174141, guid: 8b441e0bff6ecf44b8330936eca470ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1603,6 +1598,11 @@ PrefabInstance:
     - target: {fileID: 7892127717379174141, guid: 8b441e0bff6ecf44b8330936eca470ab,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718368685974045607, guid: 8b441e0bff6ecf44b8330936eca470ab,
+        type: 3}
+      propertyPath: recordDropEvent
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7790257923509135909, guid: 8b441e0bff6ecf44b8330936eca470ab,
@@ -1752,11 +1752,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpSphere (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 1718368685974045607, guid: 8b441e0bff6ecf44b8330936eca470ab,
-        type: 3}
-      propertyPath: recordDropEvent
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7892127717379174141, guid: 8b441e0bff6ecf44b8330936eca470ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1812,6 +1807,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1718368685974045607, guid: 8b441e0bff6ecf44b8330936eca470ab,
+        type: 3}
+      propertyPath: recordDropEvent
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7790257923509135909, guid: 8b441e0bff6ecf44b8330936eca470ab,
         type: 3}
       propertyPath: interactionDistance
@@ -1836,11 +1836,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PickUpSphere (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1718368685974045607, guid: 8b441e0bff6ecf44b8330936eca470ab,
-        type: 3}
-      propertyPath: recordDropEvent
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7892127717379174141, guid: 8b441e0bff6ecf44b8330936eca470ab,
         type: 3}
@@ -1897,6 +1892,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1718368685974045607, guid: 8b441e0bff6ecf44b8330936eca470ab,
+        type: 3}
+      propertyPath: recordDropEvent
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7790257923509135909, guid: 8b441e0bff6ecf44b8330936eca470ab,
         type: 3}
       propertyPath: globalInteractionDistance
@@ -1926,11 +1926,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PickUpSphere (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1718368685974045607, guid: 8b441e0bff6ecf44b8330936eca470ab,
-        type: 3}
-      propertyPath: recordDropEvent
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7892127717379174141, guid: 8b441e0bff6ecf44b8330936eca470ab,
         type: 3}
@@ -1985,6 +1980,11 @@ PrefabInstance:
     - target: {fileID: 7892127717379174141, guid: 8b441e0bff6ecf44b8330936eca470ab,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718368685974045607, guid: 8b441e0bff6ecf44b8330936eca470ab,
+        type: 3}
+      propertyPath: recordDropEvent
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7790257923509135909, guid: 8b441e0bff6ecf44b8330936eca470ab,
@@ -2237,11 +2237,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpSphere (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 1718368685974045607, guid: 8b441e0bff6ecf44b8330936eca470ab,
-        type: 3}
-      propertyPath: recordDropEvent
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7892127717379174141, guid: 8b441e0bff6ecf44b8330936eca470ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2295,6 +2290,11 @@ PrefabInstance:
     - target: {fileID: 7892127717379174141, guid: 8b441e0bff6ecf44b8330936eca470ab,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718368685974045607, guid: 8b441e0bff6ecf44b8330936eca470ab,
+        type: 3}
+      propertyPath: recordDropEvent
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7790257923509135909, guid: 8b441e0bff6ecf44b8330936eca470ab,
@@ -4614,11 +4614,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpSphere (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 1718368685974045607, guid: 8b441e0bff6ecf44b8330936eca470ab,
-        type: 3}
-      propertyPath: recordDropEvent
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7892127717379174141, guid: 8b441e0bff6ecf44b8330936eca470ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4672,6 +4667,11 @@ PrefabInstance:
     - target: {fileID: 7892127717379174141, guid: 8b441e0bff6ecf44b8330936eca470ab,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718368685974045607, guid: 8b441e0bff6ecf44b8330936eca470ab,
+        type: 3}
+      propertyPath: recordDropEvent
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7790257923509135909, guid: 8b441e0bff6ecf44b8330936eca470ab,
@@ -5776,7 +5776,7 @@ PrefabInstance:
     - target: {fileID: 1873628523751851526, guid: 1875efb35df3863489d925eb30532690,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1873628523751851526, guid: 1875efb35df3863489d925eb30532690,
         type: 3}
@@ -5786,7 +5786,7 @@ PrefabInstance:
     - target: {fileID: 1873628523751851526, guid: 1875efb35df3863489d925eb30532690,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: -1.45
       objectReference: {fileID: 0}
     - target: {fileID: 1873628523751851526, guid: 1875efb35df3863489d925eb30532690,
         type: 3}
