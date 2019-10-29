@@ -4297,7 +4297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f16bfa47c312b44ba1c52d49d83406c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectionSetting: 0
+  selectionSetting: 1
   viveController: {fileID: 1729794394}
   leapGestureController: {fileID: 669026203}
 --- !u!114 &1887470469
