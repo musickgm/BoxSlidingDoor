@@ -64,7 +64,7 @@ public class Ball : MonoBehaviour
         {
             interactionScriptLeap.OnGraspEnd -= TrialManager.Instance.ReleaseBall;
         }
-        if(ScoreBoard.Instance != null)
+        if(ScoreBoard.Instance != null && recordDropEvent)
         {
             ScoreBoard.Instance.UpdateCell(attemptSuccess, basketSuccess, setNumber, trialNumber);
         }

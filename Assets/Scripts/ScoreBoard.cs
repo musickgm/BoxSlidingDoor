@@ -30,6 +30,10 @@ public class ScoreBoard : Singleton<ScoreBoard>
 
     public void UpdateCell(bool attemptSuccess, bool basketSuccess, int setNumber, int trialNumber)
     {
+        if(scoreboardSets.Count == 0)
+        {
+            return;
+        }
         ScoreCell currentCell = scoreboardSets[setNumber].set[trialNumber];
         /*if(scoreboardSets[setNumber].set[trialNumber].recorded)
         {

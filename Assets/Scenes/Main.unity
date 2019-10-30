@@ -1520,37 +1520,42 @@ PrefabInstance:
     - target: {fileID: 2644031983098592691, guid: 889055f893079124ea98d37c2e05974f,
         type: 3}
       propertyPath: frequencyValues.Array.data[1]
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644031983098592691, guid: 889055f893079124ea98d37c2e05974f,
-        type: 3}
-      propertyPath: frequencyValues.Array.data[2]
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644031983098592691, guid: 889055f893079124ea98d37c2e05974f,
-        type: 3}
-      propertyPath: frequencyValues.Array.data[3]
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644031983098592691, guid: 889055f893079124ea98d37c2e05974f,
-        type: 3}
-      propertyPath: frequencyValues.Array.data[4]
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2644031983098592691, guid: 889055f893079124ea98d37c2e05974f,
         type: 3}
-      propertyPath: frequencyValues.Array.data[5]
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2644031983098592691, guid: 889055f893079124ea98d37c2e05974f,
-        type: 3}
-      propertyPath: frequencyValues.Array.data[6]
+      propertyPath: frequencyValues.Array.data[2]
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2644031983098592691, guid: 889055f893079124ea98d37c2e05974f,
         type: 3}
+      propertyPath: frequencyValues.Array.data[3]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644031983098592691, guid: 889055f893079124ea98d37c2e05974f,
+        type: 3}
+      propertyPath: frequencyValues.Array.data[4]
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644031983098592691, guid: 889055f893079124ea98d37c2e05974f,
+        type: 3}
+      propertyPath: frequencyValues.Array.data[5]
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644031983098592691, guid: 889055f893079124ea98d37c2e05974f,
+        type: 3}
+      propertyPath: frequencyValues.Array.data[6]
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644031983098592691, guid: 889055f893079124ea98d37c2e05974f,
+        type: 3}
       propertyPath: frequencyValues.Array.data[7]
-      value: 45
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644031983098592691, guid: 889055f893079124ea98d37c2e05974f,
+        type: 3}
+      propertyPath: frequencyValues.Array.data[0]
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 889055f893079124ea98d37c2e05974f, type: 3}
