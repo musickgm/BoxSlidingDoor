@@ -38,6 +38,18 @@ public class ParticipantNumberSelection : Singleton<ParticipantNumberSelection>
         UpdateParticipantText();
     }
 
+    public void ClearParticipantNumber()
+    {
+        if (participantNumbers.Count == 0)
+        {
+            return;
+        }
+        for (int i = 0; i < participantNumbers.Count; i++)
+        {
+            RemoveParticipantNumber();
+        }
+    }
+
     private void UpdateParticipantText()
     {
         if(InputDelay != null)
