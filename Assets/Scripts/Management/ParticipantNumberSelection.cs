@@ -92,6 +92,11 @@ public class ParticipantNumberSelection : Singleton<ParticipantNumberSelection>
         }
     }
 
+    public void SetAdminParticipantNumber(string input)
+    {
+        adminPID = int.Parse(input);
+    }
+
 
     private IEnumerator DelayAfterInput()
     {

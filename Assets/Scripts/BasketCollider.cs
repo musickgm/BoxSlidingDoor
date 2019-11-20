@@ -42,4 +42,9 @@ public class BasketCollider : MonoBehaviour
         }
     }
 
+    public void StartNextSceneAdmin()
+    {
+        Valve.VR.SteamVR_LoadLevel.Begin("Main");
+    }
+
 }
