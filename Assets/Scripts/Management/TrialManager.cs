@@ -5,6 +5,7 @@ using UnityEngine;
 public class TrialManager : Singleton<TrialManager>
 {
     public static Condition currentCondition;
+    public AudioClip alarmClip;
     private ConditionList currentSet;
     [HideInInspector]
     public int setIndex = -1;
@@ -81,6 +82,7 @@ public class TrialManager : Singleton<TrialManager>
         //Check to see if the hand is still in the box.
         if (Box.Instance.NumberOfHands() > 0)
         {
+            AudioManager.Instance.PlayAudioClip(alarmClip, Box.Instance.transform.position);
             BoxEventSystem.Instance.RaiseTrialEnd(currentCondition, false);
         }
         else if (!Box.Instance.IsBallInside())
@@ -111,6 +113,7 @@ public class TrialManager : Singleton<TrialManager>
             return;
         }
         alarmed = true;
+        AudioManager.Instance.PlayAudioClip(alarmClip, Box.Instance.transform.position);
         BoxEventSystem.Instance.RaiseTrialEnd(currentCondition, false);
         if(Box.ballClone != null)
         {

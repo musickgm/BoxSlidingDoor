@@ -10095,6 +10095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8b5468c5e402ff4798fc3c9aaec46f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropBallClip: {fileID: 8300000, guid: cd0cd8e468ddc914480853e898394fd1, type: 3}
 --- !u!1 &1638420096
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class BasketCollider : MonoBehaviour
     public enum BasketType { goal, number, delete, start };
     public BasketType basketType = BasketType.goal;
     public int basketNumber = 0;
+    public AudioClip goalAudioClip;
 
 
     private void OnTriggerEnter(Collider other)
@@ -21,8 +22,7 @@ public class BasketCollider : MonoBehaviour
             }
             if(basketType == BasketType.goal)
             {
-                //print("Basket made!");
-                //Trigger some kind of sound, particles, and UI response.
+                AudioManager.Instance.PlayAudioClip(goalAudioClip, transform.position);
             }
             else if (basketType == BasketType.number)
             {
@@ -42,9 +42,4 @@ public class BasketCollider : MonoBehaviour
         }
     }
 
-    private IEnumerator WaitThenLoad()
-    {
-        yield return new WaitForSeconds(2);
-        Valve.VR.SteamVR_LoadLevel.Begin("Main");
-    }
 }

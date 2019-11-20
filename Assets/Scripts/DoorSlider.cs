@@ -6,8 +6,6 @@ public class DoorSlider : Singleton<DoorSlider>
 {
     public Vector3 doorOpenPosition;
     public Vector3 doorClosedPosition;
-    public Transform leftHand;
-    public Transform rightHand;
     public Color goodColor;
     public Color badColor;
 
@@ -42,6 +40,10 @@ public class DoorSlider : Singleton<DoorSlider>
     {
         if (other.CompareTag("Hand"))
         {
+            if(Box.ballClone == null)
+            {
+                return;
+            }
             TrialManager.Instance.SetAlarm();
         }
         else if (other.CompareTag("Ball"))

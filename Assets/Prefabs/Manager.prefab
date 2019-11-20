@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2644031983098592689}
   - component: {fileID: 2644031983098592694}
   - component: {fileID: 846737593564248306}
+  - component: {fileID: 5178153675039623307}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -179,11 +180,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectionSetting: 2
-  viveControllerPrefab: {fileID: 6153064960960319822, guid: 9c0402878509d7f4590cfb37dc554a65,
-    type: 3}
-  leapGesturePrefab: {fileID: 1876357860844202888, guid: 1875efb35df3863489d925eb30532690,
-    type: 3}
-  spawnPoint: {fileID: 0}
+  viveController: {fileID: 0}
+  leapGestureController: {fileID: 0}
 --- !u!114 &2644031983098592689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +207,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2dfd02622fe844c9bcef6a0a783866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alarmClip: {fileID: 8300000, guid: 0b1f2c3e61a7364449dabe3ab3cde8a1, type: 3}
+  setIndex: -1
+  trialIndex: 0
 --- !u!114 &846737593564248306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,3 +222,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca504c1e8de028a43a5a5a4c2cf5a578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5178153675039623307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2644031983098592690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3005e9b8f577ec84598c17b1562aa813, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  releaseBallClip: {fileID: 8300000, guid: e73e504e3b9f97548a699e2956afe9f7, type: 3}
+  selectBallClip: {fileID: 8300000, guid: 0d0ed53f9f3e5d144bf8425dd97184af, type: 3}

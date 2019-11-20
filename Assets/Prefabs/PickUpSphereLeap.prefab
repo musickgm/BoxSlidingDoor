@@ -172,7 +172,19 @@ MonoBehaviour:
   _noContactLayer:
     layerIndex: 0
   _eventTable:
-    _entries: []
+    _entries:
+    - enumValue: 140
+      callback:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - enumValue: 141
+      callback:
+        m_PersistentCalls:
+          m_Calls: []
+        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
 --- !u!114 &6599310398123218081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,5 +219,7 @@ MonoBehaviour:
   interactionScript: {fileID: 0}
   interactionScriptLeap: {fileID: 1899726885188629139}
   recordDropEvent: 1
+  pickupClip: {fileID: 0}
+  dropClip: {fileID: 0}
   setNumber: 0
   trialNumber: 0

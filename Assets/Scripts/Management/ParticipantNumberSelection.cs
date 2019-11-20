@@ -13,6 +13,7 @@ public class ParticipantNumberSelection : Singleton<ParticipantNumberSelection>
     private readonly int maxNumbers = 4;
     private IEnumerator InputDelay;
     private bool readyForInput = true;
+    private int adminPID;
 
     public void AddParticipantNumber(int number)
     {
@@ -58,7 +59,6 @@ public class ParticipantNumberSelection : Singleton<ParticipantNumberSelection>
         }
         InputDelay = DelayAfterInput();
         StartCoroutine(InputDelay);
-        //StoryAudio.Instance.PlayAudioClip(clickSound, 0, false);
         if (participantNumbers.Count == 0)
         {
             participantText.text = "-";
@@ -71,20 +71,27 @@ public class ParticipantNumberSelection : Singleton<ParticipantNumberSelection>
         }
     }
 
-    public void SaveParticipantNumber()
+    public void SaveParticipantNumber(bool adminOverride = false)
     {
-        //StoryAudio.Instance.PlayAudioClip(clickSound, 0, false);
-        participantNumberString = "";
-        for (int i = 0; i < participantNumbers.Count; i++)
+        if(adminOverride)
         {
-            participantNumberString += participantNumbers[i];
+            DataManager.SetParticipantNumber(adminPID);
         }
-        if (System.Int32.TryParse(participantNumberString, out int participantFinalNumber))
+        else
         {
-            DataManager.SetParticipantNumber(participantFinalNumber);
-            gameObject.SetActive(false);
+            participantNumberString = "";
+            for (int i = 0; i < participantNumbers.Count; i++)
+            {
+                participantNumberString += participantNumbers[i];
+            }
+            if (System.Int32.TryParse(participantNumberString, out int participantFinalNumber))
+            {
+                DataManager.SetParticipantNumber(participantFinalNumber);
+                gameObject.SetActive(false);
+            }
         }
     }
+
 
     private IEnumerator DelayAfterInput()
     {

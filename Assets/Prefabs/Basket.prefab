@@ -105,6 +105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62896061c77cee0468a58df624e36193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  basketType: 0
+  basketNumber: 0
+  goalAudioClip: {fileID: 8300000, guid: 835a9f6942e4c404983e31dcf3dd1887, type: 3}
 --- !u!1 &87440465096929570
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,8 @@ public class Ball : MonoBehaviour
     public VRInteraction.VRInteractableItem interactionScript;
     public Leap.Unity.Interaction.InteractionBehaviour interactionScriptLeap;
     public bool recordDropEvent = true;
+    public AudioClip pickupClip;
+    public AudioClip dropClip;
 
     [ReadOnly]
     public int setNumber;
@@ -25,6 +27,8 @@ public class Ball : MonoBehaviour
             }
             else if(interactionScriptLeap != null)
             {
+                interactionScriptLeap.OnGraspBegin += AudioManager.Instance.SelectBallSound;
+                interactionScriptLeap.OnGraspEnd += AudioManager.Instance.ReleaseBallSound;
                 interactionScriptLeap.OnGraspEnd += TrialManager.Instance.ReleaseBall;
             }
         }
