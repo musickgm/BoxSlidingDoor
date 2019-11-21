@@ -8,6 +8,7 @@ using UnityEngine;
 public class BoxEventSystem : Singleton<BoxEventSystem>
 {
     public float timeBetweenTrials = 3;
+    public AdminDisplay aDisplay;
 
     #region delegates and events
     public delegate void StartExperiment();
@@ -38,8 +39,8 @@ public class BoxEventSystem : Singleton<BoxEventSystem>
 
     public void RaiseTrialStart(int setNumber, int trialNumber)
     {
-        print("Starting set " + (setNumber+1) + "; trial " + (trialNumber+1) + 
-            "(Radius = " + TrialManager.currentCondition.size + "; Frequency = " + TrialManager.currentCondition.frequency + ")");
+        aDisplay.SetAdminUI(setNumber + 1, trialNumber + 1, TrialManager.currentCondition.size, TrialManager.currentCondition.frequency);
+
         IEnumerator trialWait = WaitBetweenTrials();
         StartCoroutine(trialWait);
     }

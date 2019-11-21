@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class DoorSlider : Singleton<DoorSlider>
 {
-    public Vector3 doorOpenPosition;
-    public Vector3 doorClosedPosition;
+    public Transform doorOpenPosition;
+    public Transform doorClosedPosition;
     public Color goodColor;
     public Color badColor;
 
     private float doorSpeed;
-    private float timeBetweenCloses = 0;
+    private readonly float timeBetweenCloses = 0;
     private Transform door;
     private float journeyLength;
     private IEnumerator doorCycle;
@@ -32,7 +32,7 @@ public class DoorSlider : Singleton<DoorSlider>
     void Start()
     {
         door = GetComponent<Transform>();
-        journeyLength = Vector3.Distance(doorOpenPosition, doorClosedPosition);
+        journeyLength = Vector3.Distance(doorOpenPosition.position, doorClosedPosition.position);
 
     }
 
@@ -54,7 +54,7 @@ public class DoorSlider : Singleton<DoorSlider>
 
     private void NewTrial()
     {
-        DetermineTimeBetweenCloses(ConditionManager.Instance.frequencyValues[(int)TrialManager.currentCondition.frequency]);
+        DetermineDoorSpeed(ConditionManager.Instance.frequencyValues[(int)TrialManager.currentCondition.frequency]);
         SetLasers(false);
         StartCycle();
     }
@@ -92,7 +92,7 @@ public class DoorSlider : Singleton<DoorSlider>
             distCovered = elapsedTime * doorSpeed;
             fracJourney = distCovered / journeyLength;
 
-            door.localPosition = Vector3.Lerp(doorClosedPosition, doorOpenPosition, fracJourney);
+            door.localPosition = Vector3.Lerp(doorClosedPosition.localPosition, doorOpenPosition.localPosition, fracJourney);
             yield return new WaitForEndOfFrame();
         }
 
@@ -107,7 +107,7 @@ public class DoorSlider : Singleton<DoorSlider>
             distCovered = elapsedTime * doorSpeed;
             fracJourney = distCovered / journeyLength;
 
-            door.localPosition = Vector3.Lerp(doorOpenPosition, doorClosedPosition, fracJourney);
+            door.localPosition = Vector3.Lerp(doorOpenPosition.localPosition, doorClosedPosition.localPosition, fracJourney);
             yield return new WaitForEndOfFrame();
         }
 
@@ -122,7 +122,7 @@ public class DoorSlider : Singleton<DoorSlider>
         float elapsedTime = 0;
         float distCovered;
         Vector3 currentPosition = door.localPosition;
-        float returnJourneyLength = Vector3.Distance(currentPosition, doorClosedPosition);
+        float returnJourneyLength = Vector3.Distance(currentPosition, doorClosedPosition.position);
 
         while (fracJourney < 1)
         {
@@ -130,17 +130,16 @@ public class DoorSlider : Singleton<DoorSlider>
             distCovered = elapsedTime * doorSpeed;
             fracJourney = distCovered / returnJourneyLength;
 
-            door.localPosition = Vector3.Lerp(currentPosition, doorClosedPosition, fracJourney);
+            door.localPosition = Vector3.Lerp(currentPosition, doorClosedPosition.localPosition, fracJourney);
             yield return new WaitForEndOfFrame();
         }
     }
 
-    public void DetermineTimeBetweenCloses(float frequency)
+    public void DetermineDoorSpeed(float frequency)
     {
         float timeForACycle = 60 / frequency;
-        //float timeToBeStill = timeForACycle - ((journeyLength * 2) / doorSpeed);
-        //timeBetweenCloses = timeToBeStill / 2;
-        doorSpeed = (journeyLength * 2) / timeForACycle;
+        //Not sure why this isn't journey length x 2. But this works somehow. 
+        doorSpeed = (journeyLength ) / timeForACycle;
     }
 
 
