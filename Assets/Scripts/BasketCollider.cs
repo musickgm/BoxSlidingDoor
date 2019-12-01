@@ -18,7 +18,7 @@ public class BasketCollider : MonoBehaviour
             Ball ball = other.GetComponentInParent<Ball>();
             if (ball != null)
             {
-                ball.DestroySelf(true, true, 1);
+                ball.DestroySelf(true, true);
             }
             if(basketType == BasketType.goal)
             {
@@ -35,8 +35,6 @@ public class BasketCollider : MonoBehaviour
             else if (basketType == BasketType.start)
             {
                 ParticipantNumberSelection.Instance.SaveParticipantNumber();
-                //SceneManager.LoadScene("Main");
-                //StartCoroutine(WaitThenLoad());
                 Valve.VR.SteamVR_LoadLevel.Begin("Main");
             }
         }
