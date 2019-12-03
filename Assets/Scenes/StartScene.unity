@@ -6603,7 +6603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f16bfa47c312b44ba1c52d49d83406c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectionSetting: 0
+  selectionSetting: 1
   viveController: {fileID: 1729794394}
   leapGestureController: {fileID: 669026203}
 --- !u!114 &1887470469
@@ -6665,8 +6665,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3005e9b8f577ec84598c17b1562aa813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  releaseBallClip: {fileID: 0}
-  selectBallClip: {fileID: 0}
+  releaseBallClip: {fileID: 8300000, guid: e73e504e3b9f97548a699e2956afe9f7, type: 3}
+  selectBallClip: {fileID: 8300000, guid: 0d0ed53f9f3e5d144bf8425dd97184af, type: 3}
 --- !u!43 &1893210881
 Mesh:
   m_ObjectHideFlags: 0
